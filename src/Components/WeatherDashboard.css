@@ -1,0 +1,18 @@
+.forecast-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+    color: white;
+  }
+  
+  .forecast-list {
+    list-style: none;
+    list-style-position: inside;
+  }
+  
+  .forecast-item {
+    font-size: 0.875rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }

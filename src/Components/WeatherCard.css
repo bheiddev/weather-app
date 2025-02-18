@@ -1,0 +1,80 @@
+.weather-card {
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.3);
+    cursor: pointer;
+    border: 1px solid #2756b2;
+    background-color: rgb(169, 181, 223);
+  }
+  
+  .weather-card-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .weather-card-content {
+    margin-top:  2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .weather-info {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: .25rem;
+  }
+  
+  .expanded-content {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .expanded-content.visible {
+    opacity: 1;
+    max-height: 2000px;
+  }
+  
+  .expanded-content.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .forecast-section {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 2fr;
+    gap: 0rem;
+  }
+  
+  .forecast-grid {
+    display: flex;
+    background-color: rgb(120, 134, 199);
+  }
+  
+  @media (min-width: 768px) {
+    .forecast-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .forecast-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+    color: white;
+  }
+  
+  .forecast-list {
+    list-style: none;
+    list-style-position: inside;
+    color: black;
+  }
+  
+  .forecast-item {
+    font-size: 0.875rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  

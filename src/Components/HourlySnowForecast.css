@@ -1,0 +1,39 @@
+.snow-forecast-container {
+  margin-top: 1rem;
+  background-color: rgb(120, 134, 199);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.snow-forecast-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.snow-forecast-list {
+  max-height: 24rem;
+  overflow-y: auto;
+}
+
+.snow-forecast-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: white;
+}
+
+.snow-forecast-timestamp {
+  font-weight: 600;
+  margin-right: 0.5rem; /* Add spacing between timestamp and value */
+}
+
+.snow-forecast-value {
+  flex-shrink: 0; /* Prevent value from shrinking */
+}
+
+.no-data-message {
+  color: #6b7280;
+}
