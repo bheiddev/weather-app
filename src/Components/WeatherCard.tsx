@@ -2,8 +2,23 @@ import React from 'react';
 import HourlySnowForecast from './HourlySnowForecast.tsx';
 import { getContrastColor } from '../utils/colors.ts';
 import { LocationWeather } from '../types/weather.ts';
-import './WeatherCard.css';
+import './WeatherCard.scss';
 import { calculateDailySnowfall } from '../utils/calculations.ts';
+import breckenridgeMap from '../assets/breckenridgemap.jpg';
+import aspenMap from '../assets/aspenmap.png';
+import vailMap from '../assets/vailmap.png';
+import crestedButteMap from '../assets/crestedbuttemap.jpg';
+import tellurideMap from '../assets/telluridemap.png';
+import beaverCreekMap from '../assets/beavercreekmap.png';
+
+const locationMaps: { [key: string]: string } = {
+  'Breckenridge': breckenridgeMap,
+  'Aspen': aspenMap,
+  'Vail': vailMap,
+  'Crested Butte': crestedButteMap,
+  'Telluride': tellurideMap,
+  'Beaver Creek': beaverCreekMap
+};
 
 interface WeatherCardProps {
   location: string;
@@ -72,27 +87,21 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
                     const dayName = daysOfWeek[date.getDay()];
                     return (
                       <li key={index} className="forecast-item">
-                        {dayName}: Min: {(day.temperatureMin * 9/5 + 32).toFixed(1)}°F -
-                        Max: {(day.temperatureMax * 9/5 + 32).toFixed(1)}°F
+                        {dayName}: Low: {(day.temperatureMin * 9/5 + 32).toFixed(1)}°F -
+                        High: {(day.temperatureMax * 9/5 + 32).toFixed(1)}°F
                       </li>
                     );
                   })}
                 </ul>
               </div>
               <div>
-                <h3 className="forecast-title">6-Day Snowfall</h3>
-                <ul className="forecast-list">
-                  {dailySnowTotals.map((snowfall, index) => {
-                    const date = new Date(today);
-                    date.setDate(today.getDate() + index);
-                    const dayName = daysOfWeek[date.getDay()];
-                    return (
-                      <li key={index} className="forecast-item">
-                        {dayName}: {snowfall.toFixed(1)} inches
-                      </li>
-                    );
-                  })}
-                </ul>
+              <div>
+                <img 
+                  src={locationMaps[location]} 
+                  alt={`${location} Map`} 
+                  className="resort-map"
+                />
+              </div>
               </div>
             </div>
             {isExpanded && (

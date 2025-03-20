@@ -1,7 +1,7 @@
 import React from 'react';
 import WeatherDashboard from '../Components/WeatherDashboard.tsx';
 import { WeatherData } from '../types/weather';
-import './Home.css';
+import './Home.scss';
 
 interface HomeProps {
   weatherData: WeatherData | null;

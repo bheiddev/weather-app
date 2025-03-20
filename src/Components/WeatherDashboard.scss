@@ -1,0 +1,16 @@
+// Variables
+$text-color: white;
+$font-size-small: 0.875rem;
+
+.forecast {
+  &-list {
+    list-style: none;
+    list-style-position: inside;
+  }
+
+  &-item {
+    font-size: $font-size-small;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+  }
+}

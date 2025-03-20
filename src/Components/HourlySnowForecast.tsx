@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getContrastColor } from '../utils/colors.ts';
-import './HourlySnowForecast.css';
+import './HourlySnowForecast.scss';
 
 interface HourlyData {
   time: string;
@@ -42,7 +42,7 @@ const HourlySnowForecast: React.FC<HourlySnowForecastProps> = ({
 
     try {
       console.log('Weather data passed to hourlyforecast component', { weatherData });
-      const forecast = weatherData.hourly.slice(0, 24).map((hour) => ({
+      const forecast = weatherData.hourly.slice(0, 120).map((hour) => ({
         timestamp: new Date(hour.time),
         snowAccumulation: hour.values.snowAccumulation * 0.393701,
       }));
@@ -70,7 +70,7 @@ const HourlySnowForecast: React.FC<HourlySnowForecastProps> = ({
       className="snow-forecast-container"
       style={{ backgroundColor: contrastColor }} // Apply contrast color
     >
-      <h2 className="snow-forecast-title">Hourly Snow Accumulation (Next 24 Hours)</h2>
+      <h2 className="snow-forecast-title">Hourly Snow Accumulation</h2>
       {isLoading ? (
         <p>Loading forecast data...</p>
       ) : snowForecast.length > 0 ? (

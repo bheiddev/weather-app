@@ -1,0 +1,105 @@
+// Variables
+$transition-speed: 300ms;
+$shadow-color: rgba(30, 58, 138, 0.3);
+$border-color: #2756b2;
+$text-color: white;
+$text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+// Mixins
+@mixin text-shadow {
+  text-shadow: $text-shadow;
+}
+
+@mixin card-shadow {
+  box-shadow: 0 4px 6px -1px $shadow-color;
+  
+  &:hover {
+    box-shadow: 0 6px 8px -1px rgba(30, 58, 138, 0.4);
+  }
+}
+
+.weather-card {
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  @include card-shadow;
+  cursor: pointer;
+  border: 1px solid $border-color;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $text-color;
+    @include text-shadow;
+  }
+
+  &-content {
+    margin: 2rem 0 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.weather-info {
+  font-size: 1rem;
+  color: $text-color;
+  margin-bottom: 0.25rem;
+  @include text-shadow;
+}
+
+.expanded-content {
+  transition: all $transition-speed ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    max-height: 2000px;
+  }
+
+  &.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+
+.forecast {
+  &-section {
+    margin-top: 2rem;
+  }
+
+  &-grid {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1rem 0 1.25rem;
+    color: $text-color;
+    @include text-shadow;
+  }
+
+  &-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  &-item {
+    font-size: 0.875rem;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+    @include text-shadow;
+  }
+}

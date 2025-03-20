@@ -10,6 +10,8 @@ export interface DailyWeather {
       snowAccumulation: number;
     };
   }
+
+  
   
   export interface LocationWeather {
     daily: DailyWeather[];

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import WeatherCard from './WeatherCard.tsx';
 import { WeatherData, LocationWeather } from '../types/weather';
 import { colors } from '../utils/colors.ts';
-import './WeatherDashboard.css';
+import './WeatherDashboard.scss';
 
 interface Location {
   name: string;
