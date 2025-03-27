@@ -66,8 +66,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
               {(weatherData.daily[0].temperatureAvg * 9/5 + 32).toFixed(1)} °F
             </p>
             <p className="weather-info">
-              Min: {(weatherData.daily[0].temperatureMin * 9/5 + 32).toFixed(1)} °F |
-              Max: {(weatherData.daily[0].temperatureMax * 9/5 + 32).toFixed(1)} °F
+              Low: {(weatherData.daily[0].temperatureMin * 9/5 + 32).toFixed(1)} °F |
+              High: {(weatherData.daily[0].temperatureMax * 9/5 + 32).toFixed(1)} °F
             </p>
             <p className="weather-info">
               Next 24hr Snow Forecast: {dailySnowTotals[0].toFixed(1)} inches
